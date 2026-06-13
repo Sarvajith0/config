@@ -1,0 +1,15 @@
+
+//@theme "/usr/share/rofi/themes/solarized.rasi"
+
+//@theme "/usr/share/rofi/themes/fancy2.rasi"
+
+//@theme "/usr/share/rofi/themes/DarkBlue.rasi"
+configuration {
+  show-icons: false;
+  icon-theme: "Papirus";
+  display-drun: "  ";
+  display-window: "﩯 ";
+  display-combi: "  ";
+}
+//@theme "~/.config/rofi/themes/dusk.rasi"
+@theme "~/.config/rofi/themes/dragon.rasi"

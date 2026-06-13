@@ -1,0 +1,94 @@
+* {
+    bg:         #e7e1e8d2;
+    bg-alt:     #afb2d1;
+    fg:         #eb96ab;
+
+    purple:     #c4a7e7;
+    blue:       #bcacc6;
+    teal:       #8bd5ca;
+    gold:       #f6c177;
+    red:        #eb6f92;
+
+    border:     #54596A;
+
+    background-color: transparent;
+    text-color: #2a2b3d;
+    font: "JetBrainsMono Nerd Font 12";
+}
+
+window {
+    width: 40%;
+    location: center;
+    anchor: center;
+
+    border: 2px;
+    border-color: @bg-alt;
+    border-radius: 10px;
+
+    background-color: transparent;
+}
+
+mainbox {
+    children: [inputbar, message, listview];
+    spacing: 12px;
+    padding: 16px;
+    background-color: @bg;
+}
+
+inputbar {
+    background-color: @bg;
+    border-radius: 12px;
+    padding: 10px;
+    spacing: 10px;
+}
+
+prompt {
+    text-color: #7f849c;
+    background-color: inherit;
+}
+
+entry {
+    placeholder: "";
+    placeholder-color: #7f849c;
+    
+}
+
+listview {
+    lines: 7;
+    columns: 1;
+    spacing: 6px;
+    scrollbar: false;
+}
+
+element {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: #2a2b3d;
+}
+
+element selected.normal {
+    background-color: @blue;
+    text-color: #2a2b3d;
+}
+
+element-icon {
+    size: 1.1em;
+    vertical-align: 0.5;
+}
+
+element-text {
+    text-color: inherit;
+}
+
+message {
+    background-color: transparent;
+}
+
+textbox {
+  text-color: #ec94aa;
+}
