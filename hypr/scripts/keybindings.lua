@@ -98,7 +98,7 @@ hl.bind("SUPER + 4", hl.dsp.exec_cmd("zapzap"))
 --     ]])
 -- )
 hl.bind(
-    mainMod .." + TAB",
+    "SUPER + TAB",
     hl.dsp.exec_cmd([[
         notify-send \
             -h string:x-canonical-private-synchronous:datetime \
@@ -108,7 +108,7 @@ hl.bind(
 )
 
 hl.bind(
-    mainMod .." + A",
+    "SUPER + A",
     hl.dsp.exec_cmd([[
         notify-send \
             -h string:x-canonical-private-synchronous:battery \
@@ -117,7 +117,7 @@ hl.bind(
     ]])
 )
 hl.bind(
-    mainMod .." + S",
+    "SUPER + S",
     hl.dsp.exec_cmd([[
         notify-send \
             -h string:x-canonical-private-synchronous:media \
