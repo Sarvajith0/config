@@ -1,45 +1,15 @@
-require("general")
-require("programs")
-require("lookandfeel")
-require("animations")
-require("keybindings")
--------------------
----- AUTOSTART ----
--------------------
--- hl.exec_cmd("notify-send 'Lua Config Loaded'")
-hl.on("hyprland.start", function()
-    hl.exec_cmd("mako")
-    hl.exec_cmd("hyprpaper")
-    hl.exec_cmd("spotify")
-    hl.exec_cmd("hypridle")
-    hl.window_rule({
-    name = "spotify-workspace",
-    match = { class = "Spotify" },
-    workspace = "3 silent",
-})
-hl.window_rule({
-    name = "zapzap-workspace",
-    match = { class = "zapzap" },
-    workspace = "4",
-})
--- hl.window_rule({ match = { class = "firefox" },        opacity = "1 1" })
-hl.window_rule({ match = { class = "firefox" }, opaque = true })
-hl.window_rule({ match = { class = "firefox" }, no_blur = true })
-end)
-hl.layer_rule({
-  match        = { namespace = "rofi" },
-  blur         = true,
-  ignore_alpha = 0.5,
-})
+require("scripts/general")
+require("scripts/programs")
+require("scripts/lookandfeel")
+require("scripts/animations")
+require("scripts/keybindings")
+require("scripts/autostart")
+require("scripts/env")
+
+
 -- hl.exec_cmd("swayidle timeout 180 'hyprctl dispatch dpms off; killall bg.sh' resume 'hyprctl dispatch dpms on; ~/dots/myscripts/bg.sh'")
 
 -- hl.exec_cmd("swayidle timeout 5 'hyprctl dispatch dpms off;' resume 'hyprctl dispatch dpms on;'")
--------------------------------
----- ENVIRONMENT VARIABLES ----
--------------------------------
-hl.env("XCURSOR_THEME", "Bibata-Modern-Ice")
-hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_SIZE", "24")
 
 ----------------
 ---- INPUT -----

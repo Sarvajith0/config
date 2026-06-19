@@ -1,0 +1,24 @@
+font=JetBrainsMono Nerd Font 10
+
+anchor=top-right
+
+background-color=#414254
+text-color=#afd7ff
+
+border-size=1
+border-color=#414254
+border-radius=6
+
+width=250
+max-visible=4
+margin=3
+padding=10,14
+layer=overlay
+
+markup=0
+default-timeout=10000
+on-button-left=dismiss
+on-button-right=dismiss
+
+[summary~="([Bb]attery.*(full|charged))|((full|charged).*[Bb]attery)|([Cc]harged.*100%)|(100%.*[Cc]harged)"]
+invisible=1

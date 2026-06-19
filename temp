@@ -1,0 +1,128 @@
+
+{
+"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+"logo": {
+"padding": {
+"top": 1
+}
+},
+"display": {
+"separator": " 󰑃  "
+},
+"modules": [
+    "break",
+    {
+    "type": "os",
+    "key": " DISTRO",
+    "keyColor": "magenta"
+    },
+    {
+    "type": "kernel",
+    "key": "│ ├",
+    "keyColor": "magenta"
+    },
+    {
+    "type": "packages",
+    "key": "│ ├󰏖",
+    "keyColor": "magenta"
+    },
+    {
+    "type": "command",
+    "key": "│ ├",
+    "keyColor": "magenta",
+    "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+    },
+    {
+    "type": "shell",
+    "key": "│ └",
+    "keyColor": "magenta"
+    },
+{
+    "type": "wm",
+    "key": " DE/WM",
+    "keyColor": "blue"
+},
+{
+    "type": "wmtheme",
+    "key": "│ ├󰉼",
+    "keyColor": "blue"
+},
+{
+    "type": "icons",
+    "key": "│ ├󰀻",
+    "keyColor": "blue"
+},
+{
+    "type": "cursor",
+    "key": "│ ├",
+    "keyColor": "blue"
+},
+{
+    "type": "terminalfont",
+    "key": "│ ├",
+    "keyColor": "blue"
+},
+{
+    "type": "terminal",
+    "key": "│ └",
+    "keyColor": "blue"
+},
+{
+    "type": "host",
+    "key": "󰌢 SYSTEM",
+    "keyColor": "cyan"
+},
+{
+    "type": "cpu",
+    "key": "│ ├󰻠",
+    "keyColor": "cyan"
+},
+{
+    "type": "gpu",
+    "key": "│ ├󰻑",
+    "keyColor": "cyan"
+},
+{
+    "type": "display",
+    "key": "│ ├󰍹",
+    "keyColor": "cyan"
+},
+{
+    "type": "memory",
+    "key": "│ ├󰾆",
+    "keyColor": "cyan"
+},
+{
+    "type": "swap",
+    "key": "│ ├󰓡",
+    "keyColor": "cyan"
+},
+{
+    "type": "uptime",
+    "key": "│ ├󰅐",
+    "keyColor": "cyan"
+},
+   {
+    "type": "sound",
+    "key": " AUDIO",
+    "format": "{2}",
+    "keyColor": "white"
+},
+{
+    "type": "player",
+    "key": "│ ├󰥠",
+    "keyColor": "white"
+},
+{
+    "type": "media",
+    "key": "│ └󰝚",
+    "keyColor": "white"
+},
+"break",
+    {
+    "type": "custom",
+    "format": "\u001b[38;5;225m  \u001b[38;5;218m  \u001b[38;5;183m  \u001b[38;5;153m  \u001b[38;5;189m  \u001b[38;5;225m"
+},
+    "break"
+    ]
+}

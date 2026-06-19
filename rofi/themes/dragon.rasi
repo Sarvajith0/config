@@ -1,11 +1,11 @@
 * {
-    bg:             #f4f0eddc;
-    bg-alt:         #ece7e7d4;
+    bg:             #d2c6d4;
+    bg-alt:         #d2c6d4;
 
     fg:             #44485A;
     fg-muted:       #6F7485;
 
-    accent:         #ffb6cabc;
+    accent:         #dac1de;
     accent-bright:  #FFB6C9;
 
     lavender:       #D8D1E8;
@@ -46,13 +46,14 @@ inputbar {
 }
 
 prompt {
+    enable:false;
     text-color: @accent;
-    padding: 0px 10px 0px 0px;
+    horizontal-align: 0.5;
+    padding:0px ;
 }
-
 entry {
     text-color: @fg;
-    
+    horizontal-align: 0.5;
     placeholder-color: @fg-muted;
 }
 
@@ -82,10 +83,12 @@ element selected.normal {
     background-color: @accent;
 
     text-color: #2D3142;
+    
 }
 
 element-text {
     text-color: inherit;
+    horizontal-align: 0.5;
 }
 
 element-icon {
@@ -93,8 +96,10 @@ element-icon {
 }
 
 textbox-prompt-colon {
-    str: "✦";
+    enabled : false;
+    str: "";
     text-color: @accent;
+
 }
 
 scrollbar {

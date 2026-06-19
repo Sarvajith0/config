@@ -57,6 +57,20 @@ hl.bind(
 
 
 
+-- bind = $mainMod, V, exec, ~/.config/rofi/scripts/clipboard.sh
+
+
+hl.bind(
+    "SUPER + V",
+    hl.dsp.exec_cmd("bash /home/rogue/.config/rofi/scripts/clipboard.sh")
+)
+
+-- bind = $mainMod SHIFT, Return, exec, ~/.config/rofi/scripts/power-menu.sh
+
+hl.bind(
+    "SUPER + SHIFT + Return",
+    hl.dsp.exec_cmd("bash /home/rogue/.config/rofi/scripts/power-menu.sh")
+)
 
 
 
@@ -70,15 +84,47 @@ hl.bind("SUPER + 3", hl.dsp.exec_cmd("spotify"))
 hl.bind("SUPER + 4", hl.dsp.exec_cmd("zapzap"))
 
 
+-- hl.bind(
+--     "SUPER + TAB",
+--     hl.dsp.exec_cmd([[notify-send "󰂄 Battery" "$(acpi -b)"]])
+-- )
 
+-- hl.bind(
+--     "SUPER + TAB",
+--     hl.dsp.exec_cmd([[
+--         notify-send \
+--         "󰚥 Power Info" \
+--         "$(acpi -V)"
+--     ]])
+-- )
+hl.bind(
+    mainMod .." + TAB",
+    hl.dsp.exec_cmd([[
+        notify-send \
+            -h string:x-canonical-private-synchronous:datetime \
+            "󰃭 Date & Time" \
+            "$(date '+%A, %d %B %Y\n%I:%M:%S %p')"
+    ]])
+)
 
-
-
-
-
-
-
-
+hl.bind(
+    mainMod .." + A",
+    hl.dsp.exec_cmd([[
+        notify-send \
+            -h string:x-canonical-private-synchronous:battery \
+            "󰂄 Battery" \
+            "$(cat /sys/class/power_supply/BAT0/capacity)% ($(cat /sys/class/power_supply/BAT0/status))"
+    ]])
+)
+hl.bind(
+    mainMod .." + S",
+    hl.dsp.exec_cmd([[
+        notify-send \
+            -h string:x-canonical-private-synchronous:media \
+            "󰎆 $(playerctl status)" \
+            "$(playerctl metadata --format '{{ artist }} — {{ title }}')"
+    ]])
+)
 -- -----------------------
 -- ---- WORKSPACES -------
 -- -----------------------
@@ -102,13 +148,13 @@ end
 -- -----------------------
 
 hl.bind(
-    mainMod .. " + h",
-    hl.dsp.focus({ direction = "left" })
+    mainMod .. " + up",
+    hl.dsp.focus({ direction = "up" })
 )
 
 hl.bind(
-    mainMod .. " + l",
-    hl.dsp.focus({ direction = "right" })
+    mainMod .. " + down",
+    hl.dsp.focus({ direction = "down" })
 )
 
 hl.bind(
@@ -175,6 +221,26 @@ hl.bind(
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 
+
+-- -----------------------
+-- ---- RESIZE WS --------
+-- -----------------------
+
+-- binde = $mainMod CTRL, L, resizeactive, 30 0
+-- binde = $mainMod CTRL, H, resizeactive, -30 0
+-- binde = $mainMod CTRL, K, resizeactive, 0 -30
+-- binde = $mainMod CTRL, J, resizeactive, 0 30
+
+-- hl.bind(
+--     mainmod .. " + SHIFT + L",
+--     hl.dsp.window.resize("30")
+-- )
+
+
+
+
+
+
 -- -----------------------
 -- ---- MOUSE BINDS ------
 -- -----------------------
@@ -206,28 +272,67 @@ hl.bind(
 
 hl.bind(
     "XF86AudioRaiseVolume",
-    hl.dsp.exec_cmd(
-        "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
-    ),
-    { locked = true, repeating = true }
+    hl.dsp.exec_cmd([[
+        wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+
+        VOL=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
+
+        if echo "$VOL" | grep -q MUTED; then
+            notify-send \
+                -h string:x-canonical-private-synchronous:volume \
+                "󰝟 Volume" \
+                "Muted"
+        else
+            notify-send \
+                -h string:x-canonical-private-synchronous:volume \
+                "󰕾 Volume" \
+                "$(echo "$VOL" | awk '{print int($2*100)"%"}')"
+        fi
+    ]])
 )
+
 
 hl.bind(
     "XF86AudioLowerVolume",
-    hl.dsp.exec_cmd(
-        "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-    ),
-    { locked = true, repeating = true }
+    hl.dsp.exec_cmd([[
+        wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+
+        VOL=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
+
+        if echo "$VOL" | grep -q MUTED; then
+            notify-send \
+                -h string:x-canonical-private-synchronous:volume \
+                "󰝟 Volume" \
+                "Muted"
+        else
+            notify-send \
+                -h string:x-canonical-private-synchronous:volume \
+                "󰕾 Volume" \
+                "$(echo "$VOL" | awk '{print int($2*100)"%"}')"
+        fi
+    ]])
 )
 
 hl.bind(
     "XF86AudioMute",
-    hl.dsp.exec_cmd(
-        "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-    ),
-    { locked = true, repeating = true }
-)
+    hl.dsp.exec_cmd([[
+        wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 
+        VOL=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
+
+        if echo "$VOL" | grep -q MUTED; then
+            notify-send \
+                -h string:x-canonical-private-synchronous:volume \
+                "󰝟 Volume" \
+                "Muted"
+        else
+            notify-send \
+                -h string:x-canonical-private-synchronous:volume \
+                "󰕾 Volume" \
+                "$(echo "$VOL" | awk '{print int($2*100)"%"}')"
+        fi
+    ]])
+)
 hl.bind(
     "XF86AudioMicMute",
     hl.dsp.exec_cmd(
@@ -242,39 +347,54 @@ hl.bind(
 
 hl.bind(
     "XF86MonBrightnessUp",
-    hl.dsp.exec_cmd(
-        "brightnessctl set +10%"
-    ),
+    hl.dsp.exec_cmd([[
+        brightnessctl set +10%
+
+        notify-send \
+            -h string:x-canonical-private-synchronous:brightness \
+            "󰃠 Brightness" \
+            "$(brightnessctl -m | cut -d',' -f4)"
+    ]]),
     { locked = true, repeating = true }
 )
 
 hl.bind(
     "XF86MonBrightnessDown",
-    hl.dsp.exec_cmd(
-        "brightnessctl set 10%-"
-    ),
+    hl.dsp.exec_cmd([[
+        brightnessctl set 10%-
+
+        notify-send \
+            -h string:x-canonical-private-synchronous:brightness \
+            "󰃠 Brightness" \
+            "$(brightnessctl -m | cut -d',' -f4)"
+    ]]),
     { locked = true, repeating = true }
 )
-
 -- -----------------------
 -- ---- PLAYERCTL --------
 -- -----------------------
 
-hl.bind(
+hl.bind(         -- Next
     mainMod .. " + XF86AudioRaiseVolume",
-    hl.dsp.exec_cmd("playerctl next"),
+    hl.dsp.exec_cmd(
+        "playerctl next"
+    ),
     { locked = true }
 )
 
-hl.bind(
+hl.bind(      -- Play Pause
     mainMod .. " + XF86AudioLowerVolume",
-    hl.dsp.exec_cmd("playerctl play-pause"),
+     hl.dsp.exec_cmd(
+        "playerctl play-pause"
+    ),
     { locked = true }
 )
 
-hl.bind(
-    mainMod .. " + XF86AudioMicMute",
-    hl.dsp.exec_cmd("playerctl previous"),
+hl.bind(   --Prev
+    mainMod .. " + XF86AudioMute",
+    hl.dsp.exec_cmd([[
+        playerctl previous
+    ]]),
     { locked = true }
 
 )
