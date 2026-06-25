@@ -1,3 +1,26 @@
 Sleek
 Catppuchin
 
+[Custom]
+text=ea9fb1
+subtext=7c7f93
+nav-active-text=fab387
+main=141622
+sidebar=141622
+player=141622
+card=1e1e2e
+shadow=141622
+main-secondary=1e1e2e
+button=a6e3a1
+button-secondary=74c7ec
+button-active=f9e2af
+button-disabled=181825
+nav-active=6e7387
+play-button=ca9ee6
+tab-active=45475a
+notification=6e7387
+notification-error=6e7387
+playback-bar=dc8a78
+misc=f4dbd6
+
+check if it is possible to add it directly to color.ini
