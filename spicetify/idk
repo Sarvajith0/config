@@ -1,7 +1,8 @@
 Sleek
 Catppuchin
 
-[Custom]
+
+[skin]
 text=ea9fb1
 subtext=7c7f93
 nav-active-text=fab387
@@ -22,6 +23,30 @@ notification=6e7387
 notification-error=6e7387
 playback-bar=ea9fb1
 misc=f4dbd6
+
+
+[sky]
+text=c9b7cd
+subtext=c9b7cd
+nav-active-text=fab387
+main=656a7e
+sidebar=656a7e
+player=656a7e
+card=868da7
+shadow=141622
+main-secondary=868da7
+button=c9b7cd
+button-secondary=74c7ec
+button-active=f9e2af
+button-disabled=656a7e
+nav-active=6e7387
+play-button=c9b7cd
+tab-active=45475a
+notification=6e7387
+notification-error=6e7387
+playback-bar=c9b7cd
+misc=f4dbd6
+
 
 check if it is possible to add it directly to color.ini
 green for random stuff is by default
