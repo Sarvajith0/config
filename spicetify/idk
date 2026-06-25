@@ -11,7 +11,7 @@ player=141622
 card=1e1e2e
 shadow=141622
 main-secondary=1e1e2e
-button=a6e3a1
+button=ca9ee6
 button-secondary=74c7ec
 button-active=f9e2af
 button-disabled=181825
@@ -20,7 +20,7 @@ play-button=ca9ee6
 tab-active=45475a
 notification=6e7387
 notification-error=6e7387
-playback-bar=dc8a78
+playback-bar=ea9fb1
 misc=f4dbd6
 
 check if it is possible to add it directly to color.ini
