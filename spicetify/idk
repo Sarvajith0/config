@@ -1,6 +1,6 @@
 Sleek
-Catppuchin
-
+or 
+textify
 
 [skin]
 text=ea9fb1
@@ -50,5 +50,3 @@ misc=f4dbd6
 
 check if it is possible to add it directly to color.ini
 green for random stuff is by default
-ctrl shift r
-to reload theme
