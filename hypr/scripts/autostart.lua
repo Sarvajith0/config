@@ -9,6 +9,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hypridle")
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
+    hl.exec_cmd("pkill -f xwaylandvideobridge")
 
 end)
 
@@ -40,11 +41,6 @@ hl.layer_rule({
   ignore_alpha = 0.5,
 })
 
-hl.window_rule({
-    name = "zapzap-workspace",
-    match = { class = "zapzap" },
-    workspace = "4",
-})
 -- hl.window_rule({ match = { class = "firefox" },        opacity = "1 1" })
 hl.window_rule({ match = { class = "firefox" }, opaque = true })
 hl.window_rule({ match = { class = "Spotify" }, opaque = false })

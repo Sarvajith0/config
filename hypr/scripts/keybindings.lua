@@ -72,7 +72,10 @@ hl.bind(
     hl.dsp.exec_cmd("bash /home/rogue/.config/rofi/scripts/power-menu.sh")
 )
 
-
+hl.bind(
+    "CTRL + SHIFT + Return",
+    hl.dsp.exec_cmd("rofi -show calc -no-show-match -no-sort")
+)
 
 -- -----------------------
 -- ---- APPLICATIONS -----
@@ -236,11 +239,6 @@ hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 --     hl.dsp.window.resize("30")
 -- )
 
-
-
-
-
-
 -- -----------------------
 -- ---- MOUSE BINDS ------
 -- -----------------------
@@ -348,7 +346,7 @@ hl.bind(
 hl.bind(
     "XF86MonBrightnessUp",
     hl.dsp.exec_cmd([[
-        brightnessctl set +10%
+        brightnessctl set +5%
 
         notify-send \
             -h string:x-canonical-private-synchronous:brightness \
@@ -361,7 +359,7 @@ hl.bind(
 hl.bind(
     "XF86MonBrightnessDown",
     hl.dsp.exec_cmd([[
-        brightnessctl set 10%-
+        brightnessctl set 5%-
 
         notify-send \
             -h string:x-canonical-private-synchronous:brightness \
