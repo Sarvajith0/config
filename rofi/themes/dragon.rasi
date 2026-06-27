@@ -1,12 +1,12 @@
 * {
-    bg:             #d2c6d4;
-    bg-alt:         #d2c6d4;
+    bg:             #656a7e;
+    bg-alt:         #848898;
 
     fg:             #44485A;
     fg-muted:       #6F7485;
 
-    accent:         #dac1de;
-    accent-bright:  #FFB6C9;
+    accent:         #c8b6cc;
+    accent-bright:  #c8b6cc;
 
     lavender:       #D8D1E8;
     border:         #D6D2DB;
@@ -20,10 +20,10 @@ window {
 
     background-color: @bg;
 
-    border: 2px;
-    border-color: @bg;
+    border: 1px;
+    border-color: #c9b7cd;
 
-    border-radius: 13px;
+    border-radius: 5px;
 
     location: center;
     anchor: center;
@@ -35,12 +35,12 @@ mainbox {
 }
 
 inputbar {
-    background-color: @bg-alt;
+    background-color: @bg;
 
     border: 1px;
     border-color: @bg;
 
-    border-radius: 16px;
+    border-radius: 5px;
 
     padding: 14px;
 }
@@ -52,7 +52,7 @@ prompt {
     padding:0px ;
 }
 entry {
-    text-color: @fg;
+    text-color: #a1b4d5;
     horizontal-align: 0.5;
     placeholder-color: @fg-muted;
 }
@@ -69,10 +69,10 @@ listview {
 
 element {
     padding: 12px;
-    border-radius: 14px;
+    border-radius: 5px;
 
     background-color: transparent;
-    text-color: @fg;
+    text-color: #c8b6cc;
 }
 
 element normal.normal {
@@ -80,9 +80,14 @@ element normal.normal {
 }
 
 element selected.normal {
-    background-color: @accent;
+    background-color: transparent;
 
-    text-color: #2D3142;
+    border: 1px;
+    border-color: #c8b6cc;
+
+    border-radius: 5px;
+
+    text-color: #c8b6cc;
     
 }
 

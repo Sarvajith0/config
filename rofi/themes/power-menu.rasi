@@ -7,7 +7,7 @@ mainbox {
 window {
     width: 15%;
     padding: 7px;
-    border-radius: 22px;
+    border-radius: 5px;
 }
 
 listview {
