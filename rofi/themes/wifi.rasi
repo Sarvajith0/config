@@ -1,0 +1,22 @@
+@import "~/.config/rofi/themes/dragon.rasi"
+
+mainbox {
+    children: [ listview ];
+}
+
+window {
+    width: 15%;
+    padding: 7px;
+    border-radius: 22px;
+}
+
+
+element {
+    padding: 10px 20px;
+    border-radius: 999px;
+    children: [ element-text ];
+}
+
+element-text {
+    horizontal-align: 0.0;
+}

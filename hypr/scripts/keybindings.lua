@@ -73,9 +73,16 @@ hl.bind(
 )
 
 hl.bind(
+    "SUPER + SHIFT + W",
+    hl.dsp.exec_cmd("bash /home/rogue/.config/rofi/scripts/wifi-manager.sh")
+)
+
+
+hl.bind(
     "CTRL + SHIFT + Return",
     hl.dsp.exec_cmd("rofi -show calc -no-show-match -no-sort")
 )
+
 
 -- -----------------------
 -- ---- APPLICATIONS -----
