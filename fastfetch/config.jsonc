@@ -48,10 +48,10 @@
       "key": "{#39}  {#36}󰇄 desktop {#keys}",
       "type": "de"
     },
-    {
-      "key": "{#39}  {#39} term    {#keys}",
-      "type": "terminal"
-    },
+    // {
+    //   "key": "{#39}  {#39} terminal    {#keys}",
+    //   "type": "terminal"
+    // },
     {
       "key": "{#39}  {#39} shell   {#keys}",
       "type": "shell"
@@ -74,16 +74,16 @@
       "key": "{#39}  󰩟 network {#keys}",
       "type": "localip",
       "format": "{ipv4} ({ifname})"
-    },
+    }
     // {
     //   "key": "{#39}╰───────────╯",
     //   "type": "custom"
     // },
-    {
-      "key": "             ",
-      "type": "colors",
-      "symbol": "square"
-    },
+    // {
+    //   "key": "             ",
+    //   "type": "colors",
+    //   "symbol": "square"
+    // },
     
   ]
 }
