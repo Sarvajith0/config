@@ -12,3 +12,7 @@ baloofileinformationrc
 discord/
 discord/
 discord/
+electron-builder.json
+mimeapps.list
+systemd/
+vesktop/
