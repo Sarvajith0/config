@@ -4,7 +4,7 @@
 hl.exec_cmd("notify-send 'Lua Config Loaded'")
 hl.on("hyprland.start", function()
     hl.exec_cmd("mako")
-    hl.exec_cmd("hyprpaper")
+    hl.exec_cmd("awww")
     hl.exec_cmd("spotify")
     hl.exec_cmd("hypridle")
     hl.exec_cmd("systemctl --user start mpd.service")

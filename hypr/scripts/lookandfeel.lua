@@ -13,11 +13,14 @@ hl.config({
 
         resize_on_border = false,
         allow_tearing = false,
-        layout = "dwindle",
+        layout = "master",
+        -- master
+        -- scrolling
+        --dwindle
     },
 
     dwindle = {
-        preserve_split = true,
+        smart_split = true,
     },
 
     misc = {
