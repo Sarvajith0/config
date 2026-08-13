@@ -70,11 +70,11 @@
       "key": "  {#39} memory  {#keys}",
       "type": "memory"
     },
-    {
-      "key": "{#39}  󰩟 network {#keys}",
-      "type": "localip",
-      "format": "{ipv4} ({ifname})"
-    }
+    // {
+    //   "key": "{#39}  󰩟 network {#keys}",
+    //   "type": "localip",
+    //   "format": "{ipv4} ({ifname})"
+    // }
     // {
     //   "key": "{#39}╰───────────╯",
     //   "type": "custom"
