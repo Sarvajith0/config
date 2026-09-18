@@ -30,18 +30,6 @@ hl.window_rule({
  })
 
 -- hl.window_rule({ match = { class = "Spotify" },        opacity = "0.9 0.9" })
-hl.layer_rule({
-  match        = { namespace = "Spotify" },
-  blur         = true,
-  ignore_alpha = 0.5,
-})
+
 
 -- hl.window_rule({ match = { class = "firefox" },        opacity = "1 1" })
-hl.window_rule({ match = { class = "firefox" }, opaque = true })
-hl.window_rule({ match = { class = "Spotify" }, opaque = false })
-hl.window_rule({ match = { class = "firefox" }, no_blur = true })
-hl.layer_rule({
-  match        = { namespace = "rofi" },
-  blur         = true,
-  ignore_alpha = 0.5,
-})
