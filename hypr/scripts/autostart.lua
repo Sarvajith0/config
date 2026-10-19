@@ -13,6 +13,7 @@ hl.on("hyprland.start", function()
     -- hl.exec_cmd("wl-clip-persist --clipboard regular &")
     hl.exec_cmd("pkill -f xwaylandvideobridge")
     hl.exec_cmd("systemctl --user enable mpd.service")
+    hl.exec_cmd("systemctl enable --now docker")
 end)
 
  hl.window_rule({
